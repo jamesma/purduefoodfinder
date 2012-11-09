@@ -14,16 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-
-$(function(){
-  $('#datepicker').datepicker({
+$(document).ready(function () {
+  $('.datepicker').datepicker({
     format: 'mm-dd-yyyy'
   });
 
-  $('#timepicker').timepicker({
-    minuteStep: 1,
-    template: 'modal',
-    showSeconds: true,
-    showMeridian: false
-  });
+  $('.timepicker').timepicker();
 });
