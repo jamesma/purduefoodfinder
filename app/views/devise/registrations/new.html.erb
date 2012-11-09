@@ -6,7 +6,7 @@
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
       <%= f.error_notification %>
       <%= f.input :name, :autofocus => true %> 
-      <%= f.input :email, :required => true, :placeholder => 'purdue email only' %>
+      <%= f.input :email, :required => true, :placeholder => '@purdue.edu email only' %>
       <%= f.input :password, :required => true %>
       <%= f.input :password_confirmation, :required => true %>
       <%= f.button :submit, 'Sign up', :class => 'btn btn-large btn-primary' %>

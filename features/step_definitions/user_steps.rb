@@ -1,7 +1,7 @@
 ### UTILITY METHODS ###
 
 def create_visitor
-  @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
+  @visitor ||= { :name => "Testy McUserton", :email => "example@purdue.edu",
     :password => "please", :password_confirmation => "please" }
 end
 
@@ -112,7 +112,7 @@ When /^I return to the site$/ do
 end
 
 When /^I sign in with a wrong email$/ do
-  @visitor = @visitor.merge(:email => "wrong@example.com")
+  @visitor = @visitor.merge(:email => "wrong@purdue.edu")
   sign_in
 end
 

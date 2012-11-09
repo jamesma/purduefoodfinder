@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
+
+  # Validates purdue campus email
+  VALID_PURDUE_EMAIL_REGEX = /\A[\w+\-.]+@purdue\.edu/i
+  validates :email, presence: true, 
+                    format: { with: VALID_PURDUE_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 end

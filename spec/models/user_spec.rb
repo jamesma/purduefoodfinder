@@ -5,7 +5,7 @@ describe User do
   before(:each) do
     @attr = { 
       :name => "Example User",
-      :email => "user@example.com",
+      :email => "user@purdue.edu",
       :password => "foobar",
       :password_confirmation => "foobar"
     }
@@ -21,10 +21,18 @@ describe User do
   end
   
   it "should accept valid email addresses" do
-    addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
+    addresses = %w[user@purdue.edu THE_USER@purdue.edu first.last@purdue.edu]
     addresses.each do |address|
       valid_email_user = User.new(@attr.merge(:email => address))
       valid_email_user.should be_valid
+    end
+  end
+
+  it "should reject non-purdue email addresses" do
+    addresses = %w[user@purdue.org user@stanford.edu user@purdue.ed]
+    addresses.each do |address|
+      invalid_email_user = User.new(@attr.merge(:email => address))
+      invalid_email_user.should_not be_valid
     end
   end
   
