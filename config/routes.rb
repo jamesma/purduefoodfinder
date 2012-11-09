@@ -1,4 +1,7 @@
 Purduefoodfinder::Application.routes.draw do
+  match '/about', to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
+  
   authenticated :user do
     root :to => 'home#index'
   end
