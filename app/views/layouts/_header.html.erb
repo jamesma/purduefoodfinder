@@ -3,7 +3,7 @@
     <div class="container">
       <%= link_to "PurdueFoodFinder", root_path, :id => 'logo' %>
       <ul class="nav pull-right">
-        <li><%= link_to "Add",      '#' %></li>
+        <li><%= link_to "Add",      new_event_path %></li>
         <li><%= link_to "Events",   '#' %></li>
         <% if user_signed_in? %>
           <li id="fat-menu" class="dropdown">

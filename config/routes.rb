@@ -1,6 +1,6 @@
 Purduefoodfinder::Application.routes.draw do
-  match '/about', to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/about',     to: 'static_pages#about'
+  match '/contact',   to: 'static_pages#contact'
   
   authenticated :user do
     root :to => 'home#index'
@@ -8,6 +8,8 @@ Purduefoodfinder::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+  resources :events
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
