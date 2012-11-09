@@ -5,8 +5,8 @@ def create_event
     details: "Event for testing, please ignore.",
     where: "Purdue University STEW302",
     source: "CS Opportunity Update",
-    whendate: "2012-11-08",
-    whentime: "2012-11-08 22:39:03" }
+    whendate: "01-02-2013",
+    whentime: "11:11 AM" }
 end
 
 def delete_event

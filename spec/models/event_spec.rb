@@ -20,12 +20,12 @@ describe Event do
 
   before(:each) do
     @attr = { 
-      :name => "Example User",
-      :details => "user@purdue.edu",
-      :where => "foobar",
-      :source => "foobar",
-      :whendate => "2012-11-08",
-      :whentime => "2012-11-08 22:39:03"
+      name:     "Example User",
+      details:  "user@purdue.edu",
+      where:    "foobar",
+      source:   "foobar",
+      whendate: "2012-11-08",
+      whentime: "22:39:02"
     }
   end
 
@@ -77,12 +77,12 @@ describe Event do
   end
 
   describe "with blank whendate" do
-    before { @event.name = " " }
+    before { @event.whendate = "" }
     it { should_not be_valid }
   end
 
   describe "with blank whentime" do
-    before { @event.name = " " }
+    before { @event.whentime = "" }
     it { should_not be_valid }
   end
 

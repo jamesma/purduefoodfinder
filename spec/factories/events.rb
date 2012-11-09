@@ -7,7 +7,7 @@ FactoryGirl.define do
     details "MyText"
     where "MyString"
     source "MyString"
-    whendate "2012-11-08"
-    whentime "2012-11-08 22:39:03"
+    whendate "2012-11-09"
+    whentime "12:34:01"
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109035044) do
+ActiveRecord::Schema.define(:version => 20121109204125) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"

@@ -1,3 +1,14 @@
-<li>
-  <%= link_to event.name, event %>
-</li>
+<tr>
+  <td>
+    <%= event.whendate %>
+  </td>
+  <td>
+    <%= link_to event.name, event %>
+  </td>
+  <td>
+    <%= event.where %>
+  </td>
+  <td>
+    <%= event.user_id %>
+  </td>
+</tr>

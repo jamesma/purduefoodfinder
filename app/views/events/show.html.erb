@@ -1,8 +1,17 @@
 <h1>
-  <%= @event.name %>
-  <%= @event.details %>
-  <%= @event.where %>
-  <%= @event.source %>
-  <%= @event.whendate %>
-  <%= @event.whentime %>
+  <p>
+    Name: <%= @event.name %>
+  </p>
+  <p>
+    Details: <%= @event.details %>
+  </p>
+  <p>
+    Location: <%= @event.where %>
+  </p>
+  <p>
+    Source: <%= @event.source %>
+  </p>
+  <p>
+    Date: <%= @event.whendate.to_formatted_s(:long) %>
+  </p>
 </h1>

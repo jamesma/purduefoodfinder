@@ -16,15 +16,15 @@
 
 class Event < ActiveRecord::Base
   # user_id attribute is not accessible
-  attr_accessible :details, :name, :source, :whendate, :whentime, :where
+  attr_accessible :details, :name, :source, :where, :whendate, :whentime
 
-  validates :details,   presence: true,     length: { maximum: 250 }
-  validates :name,      presence: true,     length: { maximum: 140 }
-  validates :source,    presence: true,     length: { maximum: 250 }
-  validates :whendate,  presence: true
-  validates :whentime,  presence: true
-  validates :user_id,   presence: true
-  validates :where,     presence: true,     length: { maximum: 140 }
+  validates :details,       presence: true,     length: { maximum: 250 }
+  validates :name,          presence: true,     length: { maximum: 140 }
+  validates :source,        presence: true,     length: { maximum: 250 }
+  validates :whendate,      presence: true
+  validates :whentime,      presence: true
+  validates :user_id,       presence: true
+  validates :where,         presence: true,     length: { maximum: 140 }
 
   belongs_to :user
 end
