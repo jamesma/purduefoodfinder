@@ -1,4 +1,8 @@
-<% provide(:title, @user.name) %>
+<% if current_user?(@user) %>
+  <% provide(:title, 'Profile') %>
+<% else %>
+  <% provide(:title, @user.name) %>
+<% end %>
 <div class="row">
   <aside class="span3">
     <section>

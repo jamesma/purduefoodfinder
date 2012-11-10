@@ -58,6 +58,7 @@ def click_index_link
   click_link "Events"
 end
 
+### WHEN ###
 When /^I fill the event form with valid event data$/ do
   create_event
   fill_event
@@ -86,8 +87,9 @@ When /^There are events already created$/ do
   create_events
 end
 
+### THEN ###
 Then /^I should see the home page$/ do
-  page.should have_selector('title', text: "PurdueFoodFinder")
+  page.should have_title('PurdueFoodFinder')
 end
 
 Then /^I should see a require login message$/ do

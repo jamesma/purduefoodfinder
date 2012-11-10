@@ -1,4 +1,4 @@
-<% provide(:title, 'Edit Event') %>
+<% provide(:title, @event.name) %>
 <h1>Edit Event</h1>
 
 <div class="row">
@@ -11,8 +11,8 @@
       <%= f.input :where, input_html: {size: 50, maxlength: 50} %>
       <%= f.input :source, input_html: {size: 50, maxlength: 50} %>
       <%= f.input :category, collection: @category_options %>
-      <%= f.input :whendate, as: :custom_datepicker, label: "Date" %>
-      <%= f.input :whentime %>
+      <%= f.input :whendate, as: :custom_datepicker, label: 'Date' %>
+      <%= f.input :whentime, label: 'Time' %>
 
       <%= f.button :submit, 'Submit', :class => 'btn btn-large btn-primary' %>
     <% end %>
