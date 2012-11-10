@@ -10,7 +10,7 @@
       <%= f.input :details, input_html: {size: 250, maxlength: 250} %>
       <%= f.input :where, input_html: {size: 50, maxlength: 50} %>
       <%= f.input :source, input_html: {size: 50, maxlength: 50} %>
-      <%= f.input :category, collection: @category_options %>
+      <%= f.input :category, collection: @category_options, default: '' %>
       <%= f.input :whendate, as: :custom_datepicker, label: "Date" %>
       <%= f.input :whentime %>
 

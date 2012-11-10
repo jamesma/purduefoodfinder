@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!,    only: [:new, :create, :edit, :update, :destroy]
   before_filter :correct_user_or_admin, only: [:destroy, :edit, :update]
 
+  # Declare category options here
   @@category_options = ['Career Talk', 'Callout', 'Career Fair', 'Others']
 
   # Return HTML form for new event creation
@@ -30,6 +31,9 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_url, notice: "Event added."
     else
+      # Rails does not run any of the code for that action in the controller specified by render 'new'
+      # Any instance var that is required in the view must be set up in here before calling render
+      @category_options = @@category_options
       render 'new'
     end
   end
@@ -43,8 +47,7 @@ class EventsController < ApplicationController
   # Update specific event
   def update
     if @event.update_attributes(params[:event])
-      flash[:notice] = "Event updated."
-      redirect_to root_url
+      redirect_to root_url, notice: "Event updated."
     else
       render 'edit'
     end
@@ -53,8 +56,7 @@ class EventsController < ApplicationController
   # Delete specific event
   def destroy
     @event.destroy
-    flash[:notice] = "Event deleted."
-    redirect_to root_url
+    redirect_to root_url, notice: "Event deleted."
   end
 
   private
