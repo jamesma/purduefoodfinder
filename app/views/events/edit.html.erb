@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit Event') %>
+<h1>Edit Event</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for(@event, html: { class: 'form-vertical' }) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :name, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :details, input_html: {size: 250, maxlength: 250} %>
+      <%= f.input :where, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :source, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :whendate, as: :custom_datepicker, label: "Date" %>
+      <%= f.input :whentime %>
+
+      <%= f.button :submit, 'Submit', :class => 'btn btn-large btn-primary' %>
+    <% end %>
+  </div>
+</div>

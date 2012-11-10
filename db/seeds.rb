@@ -5,24 +5,64 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts 'CREATING ROLES'
 
-Role.create([
-  { :name => 'admin' }, 
-  { :name => 'user' }, 
-  { :name => 'VIP' }
-], :without_protection => true)
+def create_roles
+  puts 'CREATING ROLES'
 
-puts 'SETTING UP DEFAULT USER LOGIN'
+  Role.create([
+    { name: 'admin' }, 
+    { name: 'user' }
+  ], without_protection: true)
+end
 
-admin = User.create! :name => 'Administrator', :email => 'ma23@purdue.edu', :password => 'foobar', :password_confirmation => 'foobar'
-admin.add_role :admin
-puts 'Admin created: ' << admin.name
+def create_users
+  puts 'CREATING USERS'
 
-user = User.create! :name => 'First User', :email => 'user1@purdue.edu', :password => 'foobar', :password_confirmation => 'foobar'
-user.add_role :user
-puts 'New user created: ' << user.name
+  admin = User.create!(
+    name: 'Administrator',
+    email: 'admin@purdue.edu',
+    password: 'foobar',
+    password_confirmation: 'foobar')
 
-user2 = User.create! :name => 'Second User', :email => 'user2@purdue.edu', :password => 'foobar', :password_confirmation => 'foobar'
-user2.add_role :user
-puts 'New user created: ' << user2.name
+  admin.add_role :admin
+  puts 'Admin created: ' << admin.email
+
+  49.times do |n|
+    name = Faker::Name.name
+    email = "user#{n+1}@purdue.edu"
+    password = 'foobar'
+    user = User.create!(
+      name: name,
+      email: email,
+      password: password,
+      password_confirmation: password)
+    user.add_role :user
+  end
+end
+
+def create_events
+  puts 'CREATING EVENTS'
+
+  users = User.all(limit: 10)
+  5.times do
+    users.each do |user|
+      name = Faker::Name.title
+      details = Faker::Company.catch_phrase
+      address = Faker::Address.street_name
+      source = Faker::Internet.url
+      date = rand(5.months).ago
+      time = rand(50.minutes).ago
+      user.events.create!(
+        name: name,
+        details: details,
+        where: address,
+        source: source,
+        whendate: date,
+        whentime: time)
+    end
+  end
+end
+
+
+create_users
+create_events

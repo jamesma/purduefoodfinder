@@ -1,17 +1,29 @@
-<h1>
-  <p>
-    Name: <%= @event.name %>
-  </p>
-  <p>
-    Details: <%= @event.details %>
-  </p>
-  <p>
-    Location: <%= @event.where %>
-  </p>
-  <p>
-    Source: <%= @event.source %>
-  </p>
-  <p>
-    Date: <%= @event.whendate.to_formatted_s(:long) %>
-  </p>
-</h1>
+<iframe width='940' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/jamesma.map-4mikktcb.html#15/40.42650252127781/-86.91682414377901'></iframe>
+
+<div class="hero-unit">
+  <h1>
+      <%= @event.name %>
+  </h1>
+  <h2>
+    <p>
+      Details: 
+      <span><%= @event.details %></span>
+    </p>
+    <p>
+      Location: 
+      <span><%= @event.where %></span>
+    </p>
+    <p>
+      Source: 
+      <span><%= @event.source %></span>
+    </p>
+    <p>
+      Date: 
+      <span><%= @event.whendate.to_formatted_s(:long) %> at <%= @event.whentime.strftime("%I:%M %p") %></span>
+    </p>
+    <p>
+      Added by: 
+      <span><%= link_to @event.user.name, @event.user %></span>
+    </p>
+  </h2>
+</div>

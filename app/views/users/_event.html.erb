@@ -13,8 +13,4 @@
   <td>
     <%= event.where %>
   </td>
-  <td>
-    <% event_user = User.find_by_id(event.user_id) %>
-    <%= link_to event_user.name, event_user %>
-  </td>
 </tr>

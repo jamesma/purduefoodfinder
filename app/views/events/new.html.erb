@@ -6,36 +6,12 @@
     <%= simple_form_for(@event, html: { class: 'form-vertical' }) do |f| %>
       <%= f.error_notification %>
 
-      <%= f.input :name %>
-      <%= f.input :details %>
-      <%= f.input :where %>
-      <%= f.input :source %>
+      <%= f.input :name, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :details, input_html: {size: 250, maxlength: 250} %>
+      <%= f.input :where, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :source, input_html: {size: 50, maxlength: 50} %>
       <%= f.input :whendate, as: :custom_datepicker, label: "Date" %>
       <%= f.input :whentime %>
-
-      <!-- <div class="control-group date required">
-        <label class="date required control-label" for="event_whendate"><abbr title="required">*</abbr> Date</label>
-        <div class="controls">
-          <div class="input-prepend">
-            <span class="input-append date datepicker" data-date="" data-date-format="dd-mm-yyyy">
-              <input id="event_whendate" class="span2" size="16" type="text" name="event[whendate]" />
-              <span class="add-on"><i class="icon-th"></i></span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="control-group time required">
-        <label class="time required control-label" for="event_whentime"><abbr title="required">*</abbr> Time</label>
-        <div class="controls">
-          <div class="input-prepend">
-            <span class="input-append bootstrap-timepicker-component">
-              <input id="event_whentime" class="input-small timepicker" type="text" name="event[whentime]" />
-              <span class="add-on"><i class="icon-time"></i></span>
-            </span>
-          </div>
-        </div>
-      </div> -->
 
       <%= f.button :submit, 'Create Event', :class => 'btn btn-large btn-primary' %>
     <% end %>

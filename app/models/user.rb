@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
-  validates_presence_of :name
+  validates_presence_of :name, length: { maximum: 40 }
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   # Validates purdue campus email

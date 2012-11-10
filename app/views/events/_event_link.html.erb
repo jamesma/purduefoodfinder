@@ -1,0 +1,6 @@
+
+<% if object.whendate.past? %>
+  <%= link_to object.name, object, class: "past_event" %>
+<% else %>
+  <%= link_to object.name, object %>
+<% end %>
