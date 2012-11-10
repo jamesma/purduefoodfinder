@@ -22,6 +22,19 @@ def create_user
   @user = FactoryGirl.create(:user, email: @visitor[:email])
 end
 
+def create_users
+  49.times do |n|
+    name = Faker::Name.name
+    email = "user#{n+1}@purdue.edu"
+    password = 'foobar'
+    user = User.create!(
+      name: name,
+      email: email,
+      password: password,
+      password_confirmation: password)
+  end
+end
+
 def delete_user
   @user ||= User.first conditions: {:email => @visitor[:email]}
   @user.destroy unless @user.nil?
