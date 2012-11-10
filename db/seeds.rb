@@ -47,9 +47,10 @@ def create_events
   5.times do
     users.each do |user|
       name = Faker::Name.title
-      details = Faker::Company.catch_phrase
+      details = Faker::Lorem.paragraph
       address = Faker::Address.street_name
       source = Faker::Internet.url
+      category = Faker::Address.state
       date = rand(5.months).ago
       time = rand(50.minutes).ago
       user.events.create!(
@@ -57,11 +58,13 @@ def create_events
         details: details,
         where: address,
         source: source,
+        category: category,
         whendate: date,
         whentime: time)
     end
   end
 end
+
 
 
 create_users

@@ -2,9 +2,12 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!,    only: [:new, :create, :edit, :update, :destroy]
   before_filter :correct_user_or_admin, only: [:destroy, :edit, :update]
 
+  @@category_options = ['Career Talk', 'Callout', 'Career Fair', 'Others']
+
   # Return HTML form for new event creation
   def new
     @event = Event.new
+    @category_options = @@category_options
   end
 
   # Display specific event
@@ -34,6 +37,7 @@ class EventsController < ApplicationController
   # Return HTML form for event edit
   def edit
     @event = Event.find(params[:id])
+    @category_options = @@category_options
   end
 
   # Update specific event

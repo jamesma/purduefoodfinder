@@ -12,11 +12,12 @@
 #  updated_at :datetime         not null
 #  whendate   :date
 #  whentime   :time
+#  category   :string(255)
 #
 
 class Event < ActiveRecord::Base
   # user_id attribute is not accessible
-  attr_accessible :details, :name, :source, :where, :whendate, :whentime
+  attr_accessible :details, :name, :source, :where, :whendate, :whentime, :category
 
   validates :details,       presence: true,     length: { maximum: 250 }
   validates :name,          presence: true,     length: { maximum: 140 }
@@ -25,6 +26,7 @@ class Event < ActiveRecord::Base
   validates :whentime,      presence: true
   validates :user_id,       presence: true
   validates :where,         presence: true,     length: { maximum: 140 }
+  validates :category,      presence: true,     length: { maximum: 20 }
 
   belongs_to :user
 end

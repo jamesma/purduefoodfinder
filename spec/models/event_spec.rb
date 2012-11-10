@@ -12,6 +12,7 @@
 #  updated_at :datetime         not null
 #  whendate   :date
 #  whentime   :time
+#  category   :string(255)
 #
 
 require 'spec_helper'
@@ -25,7 +26,8 @@ describe Event do
       where:    "foobar",
       source:   "foobar",
       whendate: "2012-11-08",
-      whentime: "22:39:02"
+      whentime: "22:39:02",
+      category: "category"
     }
   end
 
@@ -40,6 +42,7 @@ describe Event do
   it { should respond_to(:whendate) }
   it { should respond_to(:whentime) }
   it { should respond_to(:user_id) }
+  it { should respond_to(:category) }
 
   it { should be_valid }
 
@@ -86,23 +89,33 @@ describe Event do
     it { should_not be_valid }
   end
 
+  describe "with blank category" do
+    before { @event.category = "" }
+    it { should_not be_valid }
+  end
+
   describe "with name that is too long" do
     before { @event.name = "a" * 141 }
     it { should_not be_valid }
   end
 
   describe "with details that is too long" do
-    before { @event.name = "a" * 251 }
+    before { @event.details = "a" * 251 }
     it { should_not be_valid }
   end
 
   describe "with source that is too long" do
-    before { @event.name = "a" * 251 }
+    before { @event.source = "a" * 251 }
     it { should_not be_valid }
   end
 
-  describe "with where that is too long" do
-    before { @event.name = "a" * 141 }
+  describe "with location that is too long" do
+    before { @event.where = "a" * 141 }
+    it { should_not be_valid }
+  end
+
+  describe "with category that is too long" do
+    before { @event.category = "a" * 21 }
     it { should_not be_valid }
   end
 
