@@ -15,6 +15,14 @@ Tasks
 - Add: pins related to events are show on homepage.
 - Add: pin related to single event is show on event page.
 
+Devise::Mailer Setup on Heroku
+==============================
+
+- Follow this [Heroku blog post][] to setup Devise::Mailer setup with Gmail on Heroku.
+- Run `heroku config:add GMAIL_SMTP_USER=username@gmail.com`
+- Run `heroku config:add GMAIL_SMTP_PASSWORD=yourpassword`
+- The advantage is that your email username and password are not exposed in the `config/environments/` directory. Win-win!
+
 Third-party Usage
 =================
 
@@ -37,3 +45,4 @@ Third-party Usage
 [RailsApps]: http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html
 [Rspec]: http://rspec.info/
 [Cucumber]: http://cukes.info/
+[Heroku blog post]: http://blog.heroku.com/archives/2009/11/9/tech_sending_email_with_gmail/
