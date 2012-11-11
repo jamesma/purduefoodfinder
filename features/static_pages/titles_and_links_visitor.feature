@@ -10,13 +10,15 @@ Feature: Add event
       Then I should see the title of <title>
 
     Examples:
-      | page        | title                         |
-      | home        | PurdueFoodFinder              |
-      | about       | PurdueFoodFinder About        |
-      | contact     | PurdueFoodFinder Contact      |
-      | events      | PurdueFoodFinder              |
-      | login       | PurdueFoodFinder Login        |
-      | signup      | PurdueFoodFinder Sign up      |
+      | page                | title                                 |
+      | home                | PurdueFoodFinder                      |
+      | about               | PurdueFoodFinder About                |
+      | contact             | PurdueFoodFinder Contact              |
+      | events              | PurdueFoodFinder                      |
+      | login               | PurdueFoodFinder Login                |
+      | signup              | PurdueFoodFinder Sign up              |
+      | passwordreset       | PurdueFoodFinder Password Reset       |
+      | resendconfirmation  | PurdueFoodFinder Resend Confirmation  |
 
     Scenario Outline: Visitor finds links to other pages
       Given There are events already created

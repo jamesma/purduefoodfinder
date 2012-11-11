@@ -67,6 +67,10 @@ When /^I navigate to the page of (.*)$/ do |page|
       visit '/'
     when 'edit event'
       visit '/'
+    when 'passwordreset'
+      visit '/users/password/new'
+    when 'resendconfirmation'
+      visit '/users/confirmation/new'
   end
 end
 
