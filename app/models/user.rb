@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string(255)
+#  gravatar_email         :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :gravatar_email
   # attr_accessible :title, :body
   validates_presence_of :name, length: { maximum: 40 }
   validates_uniqueness_of :name, :email, :case_sensitive => false

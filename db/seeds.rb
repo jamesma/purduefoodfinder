@@ -46,8 +46,8 @@ def create_events
   users = User.all(limit: 10)
   5.times do
     users.each do |user|
-      name = Faker::Name.title
-      details = Faker::Lorem.paragraph
+      name = Faker::Company.name
+      details = Faker::Company.catch_phrase
       address = Faker::Address.street_name
       source = Faker::Internet.url
       category = Faker::Address.state

@@ -100,7 +100,7 @@ describe Event do
   end
 
   describe "with details that is too long" do
-    before { @event.details = "a" * 251 }
+    before { @event.details = "a" * 501 }
     it { should_not be_valid }
   end
 

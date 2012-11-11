@@ -3,13 +3,11 @@ Purdue FoodFinder
 
 Author: [James Ma][]
 
-Web application that lets you find events with free food around Purdue's campus. A work in progress.
+Web application that lets you find events with free food around Purdue's campus. A work in progress. You can view the website [here][].
 
 Tasks
 =====
 
-- Test: on heroku.
-- Add: gravatar pic to user profiles.
 - Fix: "Time" field for "Add Event" form.
 - Add: users can add pin to a single event in embedded MapBox.
 - Add: pins related to events are show on homepage.
@@ -18,3 +16,4 @@ Tasks
 - Add: users must be verified to add events.
 
 [James Ma]: http://jamesma.info
+[here]: http://purduefoodfinder.herokuapp.com/

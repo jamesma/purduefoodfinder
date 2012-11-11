@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
   # user_id attribute is not accessible
   attr_accessible :details, :name, :source, :where, :whendate, :whentime, :category
 
-  validates :details,       presence: true,     length: { maximum: 250 }
+  validates :details,       presence: true,     length: { maximum: 500 }
   validates :name,          presence: true,     length: { maximum: 140 }
   validates :source,        presence: true,     length: { maximum: 250 }
   validates :whendate,      presence: true

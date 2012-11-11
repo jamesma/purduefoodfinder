@@ -202,3 +202,7 @@ Then /^I should see my name$/ do
   create_user
   page.should have_content @user[:name]
 end
+
+Then /^I should be at my profile page$/ do
+  page.should have_title 'Profile'
+end

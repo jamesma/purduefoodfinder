@@ -8,9 +8,10 @@
       
       <%= f.input :name, required: false, :autofocus => true, input_html: {size: 40, maxlength: 30} %>
       <%= f.input :email, required: false, :disabled => true, input_html: {size: 40, maxlength: 30} %>
-      <%= f.input :password, required: false, :autocomplete => "off", input_html: {size: 40, maxlength: 30} %>
+      <%= f.input :gravatar_email, required: false, input_html: {size: 40, maxlength: 30}, placeholder: 'set up a gravatar profile pic at gravatar.com' %>
+      <%= f.input :password, required: false, :autocomplete => "off", input_html: {size: 40, maxlength: 30}, label: 'New password' %>
       <%= f.input :password_confirmation, :required => false, input_html: {size: 40, maxlength: 30} %>
-      <%= f.input :current_password, required: false, input_html: {size: 40, maxlength: 30} %>
+      <%= f.input :current_password, required: false, input_html: {size: 40, maxlength: 30}, placeholder: 'required if you are making a change' %>
 
       <%= f.button :submit, 'Update', :class => 'btn-primary' %>
     <% end %>
