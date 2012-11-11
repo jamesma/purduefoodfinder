@@ -18,7 +18,7 @@ Tasks
 Devise::Mailer Setup on Heroku
 ==============================
 
-- Follow this [Heroku blog post][] to setup Devise::Mailer setup with Gmail on Heroku.
+- Follow this [Heroku blog post][] to setup Devise::Mailer with Gmail on Heroku.
 - Run `heroku config:add GMAIL_SMTP_USER=username@gmail.com`
 - Run `heroku config:add GMAIL_SMTP_PASSWORD=yourpassword`
 - The advantage is that your email username and password are not exposed in the `config/environments/` directory. Win-win!
