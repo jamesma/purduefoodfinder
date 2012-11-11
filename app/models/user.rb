@@ -36,6 +36,9 @@ class User < ActiveRecord::Base
   validates_presence_of :name, length: { maximum: 40 }
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
+  # Callback method before saving model
+  before_save { self.add_role :user } # Default role for new User models is :user
+
   # Validates purdue campus email
   VALID_PURDUE_EMAIL_REGEX = /\A[\w+\-.]+@purdue\.edu/i
   validates :email, presence: true, 
