@@ -14,8 +14,6 @@ Tasks
 - Add: users can add pin to a single event in embedded MapBox.
 - Add: pins related to events are show on homepage.
 - Add: pin related to single event is show on event page.
-- Add: email confirmations can be sent successfully.
-- Add: users must be verified to add events.
 
 Third-party Usage
 =================
