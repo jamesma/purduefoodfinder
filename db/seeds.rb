@@ -23,9 +23,9 @@ def create_users
     email: 'admin@purdue.edu',
     password: 'foobar',
     password_confirmation: 'foobar')
-
+  admin.confirm!
   admin.add_role :admin
-  puts 'Admin created: ' << admin.email
+  puts 'Admin created and confirmed: ' << admin.email
 
   49.times do |n|
     name = Faker::Name.name
@@ -36,6 +36,7 @@ def create_users
       email: email,
       password: password,
       password_confirmation: password)
+    user.confirm!
     user.add_role :user
   end
 end

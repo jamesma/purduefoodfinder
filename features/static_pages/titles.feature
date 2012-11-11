@@ -3,7 +3,7 @@ Feature: Add event
   I should see the correct title for each page
 
     Background:
-      Given I am logged in
+      Given I have confirmed my email and logged in
 
     Scenario Outline: User navigation to a page
       When I navigate to the page of <page>

@@ -58,13 +58,19 @@ def sign_in
   click_button "Login"
 end
 
+def confirm_user_email
+  find_user
+  @user.confirm!
+end
+
 ### GIVEN ###
 Given /^I am not logged in$/ do
   visit '/users/sign_out'
 end
 
-Given /^I am logged in$/ do
+Given /^I have confirmed my email and logged in$/ do
   create_user
+  confirm_user_email
   sign_in
 end
 
@@ -79,6 +85,14 @@ end
 
 Given /^I exist as an unconfirmed user$/ do
   create_unconfirmed_user
+end
+
+Given /^I have confirmed my email$/ do
+  confirm_user_email
+end
+
+Given /^I have not confirmed my email$/ do
+  # unconfirm_user_email
 end
 
 ### WHEN ###
@@ -168,6 +182,14 @@ end
 
 Then /^I should see a successful sign up message$/ do
   page.should have_content "Welcome! You have signed up successfully."
+end
+
+Then /^I should see a email confirmation instruction message$/ do
+  page.should have_content "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+end
+
+Then /^I should see a email confirmation required message$/ do
+  page.should have_content "You have to confirm your account before continuing."
 end
 
 Then /^I should see an invalid email message$/ do

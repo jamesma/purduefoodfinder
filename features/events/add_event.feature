@@ -4,7 +4,7 @@ Feature: Add event
   so the event can be displayed to others
 
     Background:
-      Given I am logged in
+      Given I have confirmed my email and logged in
 
     Scenario: User adds event with valid data
       When I fill the event form with valid event data
