@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span4 offset4">
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-vertical' }) do |f| %>
-      <%= f.input :email, autofocus: true, required: false %>
+      <%= f.input :email, required: false, autofocus: true %>
       <%= f.button :submit, "Email Password Reset", class: 'btn btn-large btn-primary' %>
     <% end %>
     <%= render "devise/shared/links" %>

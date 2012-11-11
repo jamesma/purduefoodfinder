@@ -115,6 +115,10 @@ footer {
   @include box-sizing; // Sass mixin facility
 }
 
+.delete-account {
+  color: #E65252;
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {

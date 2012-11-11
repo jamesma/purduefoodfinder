@@ -6,13 +6,13 @@
     <%= simple_form_for(@event, html: { class: 'form-vertical' }) do |f| %>
       <%= f.error_notification %>
 
-      <%= f.input :name, input_html: {size: 50, maxlength: 50} %>
-      <%= f.input :details, input_html: {size: 250, maxlength: 250} %>
-      <%= f.input :where, input_html: {size: 50, maxlength: 50} %>
-      <%= f.input :source, input_html: {size: 50, maxlength: 50} %>
-      <%= f.input :category, collection: @category_options, default: '' %>
-      <%= f.input :whendate, as: :custom_datepicker, label: "Date" %>
-      <%= f.input :whentime %>
+      <%= f.input :name, required: false, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :details, required: false, input_html: {size: 250, maxlength: 250} %>
+      <%= f.input :where, required: false, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :source, required: false, input_html: {size: 50, maxlength: 50} %>
+      <%= f.input :category, required: false, collection: @category_options, default: '' %>
+      <%= f.input :whendate, required: false, as: :custom_datepicker, label: 'Date' %>
+      <%= f.input :whentime, required: false, label: 'Time' %>
 
       <%= f.button :submit, 'Add', :class => 'btn btn-large btn-primary' %>
     <% end %>
