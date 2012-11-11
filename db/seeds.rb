@@ -18,26 +18,28 @@ end
 def create_users
   puts 'CREATING USERS'
 
-  admin = User.create!(
+  admin = User.new(
     name: 'Administrator',
     email: 'admin@purdue.edu',
     password: 'foobar',
     password_confirmation: 'foobar')
-  admin.confirm!
+  admin.skip_confirmation!
   admin.add_role :admin
+  admin.save!
   puts 'Admin created and confirmed: ' << admin.email
 
   49.times do |n|
     name = Faker::Name.name
     email = "user#{n+1}@purdue.edu"
     password = 'foobar'
-    user = User.create!(
+    user = User.new(
       name: name,
       email: email,
       password: password,
       password_confirmation: password)
-    user.confirm!
+    user.skip_confirmation!
     user.add_role :user
+    user.save!
   end
 end
 
