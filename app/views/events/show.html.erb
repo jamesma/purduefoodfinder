@@ -3,6 +3,13 @@
 <div class="hero-unit">
   <h1>
       <%= @event.name %>
+      <% if user_signed_in? %>
+        <% if current_user?(@event.user) || current_user.has_role?(:admin) %>
+          <span class="event_action_links">
+            <%= render 'shared/edit_event', object: @event %> <%= render 'shared/delete_event', object: @event %>
+          </span>
+        <% end %>
+      <% end %>
   </h1>
   <h2>
     <p>

@@ -47,7 +47,7 @@ class EventsController < ApplicationController
     params[:event]["whendate"] = convert_string_to_date(params[:event]["whendate"])
     params[:event]["whentime"] = convert_string_to_time(params[:event]["whentime"])
     if @event.update_attributes(params[:event])
-      redirect_to root_url, notice: "Event updated."
+      redirect_to event_path(@event), notice: "Event updated."
     else
       render 'edit'
     end
