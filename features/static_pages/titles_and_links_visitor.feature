@@ -13,7 +13,6 @@ Feature: Add event
       | page                | title                                 |
       | home                | PurdueFoodFinder                      |
       | about               | PurdueFoodFinder About                |
-      | contact             | PurdueFoodFinder Contact              |
       | events              | PurdueFoodFinder                      |
       | login               | PurdueFoodFinder Login                |
       | signup              | PurdueFoodFinder Sign up              |

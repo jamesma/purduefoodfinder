@@ -198,36 +198,10 @@ aside {
   }
 }
 
-/* events */
-
-.events {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-.past_event {
-  color: $grayLight;
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
+/* hero units */
 
 .hero-unit {
   font-family: "adelle", Helvetica, Arial, sans-serif;
-  background-image:url('purdue_hero_unit_graphite.png');
 
   h1 {
     font-size: 3.5em;
@@ -253,6 +227,52 @@ aside {
   p {
     font-size: 1.1em;
     line-height: 1.7em;
+  }
+
+  &.event-hero-unit {
+    background-image:url('purdue_hero_unit_graphite.png');
+
+  }
+  
+  &.about-hero-unit {
+    background-image:url('about_hero_unit_street.png');
+
+    h2 p {
+      font-size: 1.3em;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+      text-align: left;
+      font-weight: normal;
+      line-height: 1.7em;
+      color: $black;
+    }
+  }
+}
+
+/* events */
+
+.events {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.past_event {
+  color: $grayLight;
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }
 

@@ -57,8 +57,6 @@ When /^I navigate to the page of (.*)$/ do |page|
       click_link 'Settings'
     when 'about'
       click_link 'About'
-    when 'contact'
-      click_link 'Contact'
     when 'events'
       click_link 'Events'
     when 'add event'

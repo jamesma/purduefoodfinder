@@ -15,7 +15,6 @@ Feature: Add event
       | profile     | PurdueFoodFinder Profile      |
       | settings    | PurdueFoodFinder Settings     |
       | about       | PurdueFoodFinder About        |
-      | contact     | PurdueFoodFinder Contact      |
       | events      | PurdueFoodFinder              |
       | add event   | PurdueFoodFinder Add Event    |
 

@@ -23,12 +23,4 @@ describe "StaticPages" do
 
     it_should_behave_like "all static pages"
   end
-
-  describe "Contact page" do
-    before { visit contact_path }
-    let(:heading) { 'Contact' }
-    let(:page_title) { 'Contact' }
-
-    it_should_behave_like "all static pages"
-  end
 end
