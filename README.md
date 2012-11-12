@@ -7,14 +7,6 @@ A Rails app hosted on [Heroku][] that lets you find events with free food around
 
 Check out the website [here][]!
 
-Tasks
-=====
-
-- Fix: "Time" field for "Add Event" form.
-- Add: users can add pin to a single event in embedded MapBox.
-- Add: pins related to events are show on homepage.
-- Add: pin related to single event is show on event page.
-
 Devise::Mailer Setup on Heroku
 ==============================
 
@@ -31,6 +23,7 @@ Third-party Usage
 - [DataTables][]: jQuery plugin for HTML tables
 - [Twitter Bootstrap][]: Amazing front-end framework
 - [Datepicker][]: Datepicker for Bootstrap
+- [Timepicker][]: Timepicker for Bootstrap
 - [RailsApps][]: Tutorials for setting up Devise-CanCan-Bootstrap
 - [Rspec][], [Cucumber][]... the list goes on!
 
@@ -42,6 +35,7 @@ Third-party Usage
 [DataTables]: http://datatables.net/
 [Twitter Bootstrap]: http://twitter.github.com/bootstrap/
 [Datepicker]: http://www.eyecon.ro/bootstrap-datepicker/
+[Timepicker]: http://jdewit.github.com/bootstrap-timepicker/
 [RailsApps]: http://railsapps.github.com/tutorial-rails-bootstrap-devise-cancan.html
 [Rspec]: http://rspec.info/
 [Cucumber]: http://cukes.info/
