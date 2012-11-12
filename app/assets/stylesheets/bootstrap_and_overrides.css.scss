@@ -18,6 +18,7 @@ html {
 
 body {
   padding-top: 55px;
+  font-family: "adelle", Helvetica, Arial, sans-serif;
 }
 
 section {
@@ -74,7 +75,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: $white;
+    color: #08C;
     text-decoration: none;
   }
 }
@@ -190,14 +191,6 @@ aside {
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-}
-
 /* events */
 
 .events {
@@ -226,22 +219,27 @@ aside {
 }
 
 .hero-unit {
+  font-family: "adelle", Helvetica, Arial, sans-serif;
+  background-image:url('purdue_hero_unit_graphite.png');
+
   h1 {
     font-size: 3.5em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: left;
+    color: #08C;
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: left;
     font-weight: normal;
+    line-height: 1.7em;
     color: $grayLight;
     span {
-      color: $black;
+      color: $white;
     }
   }
 
@@ -249,4 +247,17 @@ aside {
     font-size: 1.1em;
     line-height: 1.7em;
   }
+}
+
+/* timepicker */
+span.bootstrap-timepicker-hour {
+  font-size: 14px;
+}
+
+span.bootstrap-timepicker-minute {
+  font-size: 14px;
+}
+
+span.bootstrap-timepicker-meridian {
+  font-size: 14px;
 }

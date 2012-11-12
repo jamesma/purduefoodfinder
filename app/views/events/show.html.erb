@@ -1,7 +1,5 @@
 <% provide(:title, @event.name) %>
 
-<iframe width='940' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/jamesma.map-4mikktcb.html#15/40.42650252127781/-86.91682414377901'></iframe>
-
 <div class="hero-unit">
   <h1>
       <%= @event.name %>
@@ -25,7 +23,7 @@
     </p>
     <p>
       Date: 
-      <span><%= @event.whendate.to_formatted_s(:long) %> at <%= @event.whentime.strftime("%I:%M %p") %></span>
+      <span><%= @event.whendate.to_formatted_s(:long) %> @ <%= @event.whentime.strftime("%I:%M %p") %></span>
     </p>
     <p>
       Added by: 

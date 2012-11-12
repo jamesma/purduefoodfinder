@@ -14,4 +14,4 @@ Feature: Add event
     Scenario: User adds event with invalid data
       When I fill the event form with invalid event data
       When I click create event button
-      Then I should see an invalid event creation message
+      Then I should see a review problems message

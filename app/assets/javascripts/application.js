@@ -185,4 +185,10 @@ $(document).ready(function() {
   $('.custom_datepicker_selector').datepicker({
     format: 'mm-dd-yyyy'
   });
+
+  $('.timepicker-default').timepicker({
+      minuteStep: 5,
+      showInputs: false,
+      disableFocus: true
+  });
 } );

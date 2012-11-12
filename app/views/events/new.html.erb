@@ -6,13 +6,13 @@
     <%= simple_form_for(@event, html: { class: 'form-vertical' }) do |f| %>
       <%= f.error_notification %>
 
-      <%= f.input :name, required: false, input_html: {size: 50, maxlength: 50}, placeholder: 'title of the event' %>
+      <%= f.input :name, required: false, label: 'Title', input_html: {size: 50, maxlength: 50}, placeholder: 'title of the event' %>
       <%= f.input :details, required: false, input_html: {size: 500, maxlength: 500}, placeholder: 'give as much details as you can, especially what kind of food is available!' %>
-      <%= f.input :where, required: false, input_html: {size: 50, maxlength: 50}, placeholder: 'give a specific campus location where students can find it!' %>
+      <%= f.input :where, required: false, label: 'Location', input_html: {size: 50, maxlength: 50}, placeholder: 'give a specific campus location where students can find it!' %>
       <%= f.input :source, required: false, input_html: {size: 50, maxlength: 50}, placeholder: 'give a link to the event!' %>
-      <%= f.input :category, required: false, collection: @category_options, default: '' %>
-      <%= f.input :whendate, required: false, as: :custom_datepicker, label: 'Date', placeholder: 'only events that have not occurred can be added' %>
-      <%= f.input :whentime, required: false, label: 'Time' %>
+      <%= f.input :category, required: false, collection: @category_options, default: @category_options.first %>
+      <%= f.input :whendate, required: false, label: 'Date', as: :custom_datepicker, placeholder: 'only events that have not occurred can be added' %>
+      <%= f.input :whentime, required: false, label: 'Time', as: :custom_timepicker %>
 
       <%= f.button :submit, 'Add', :class => 'btn btn-large btn-primary' %>
     <% end %>

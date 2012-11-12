@@ -7,7 +7,7 @@ def create_event
     source:     "CS Opportunity Update",
     whendate:   "01-02-2013",
     whentime:   "11:11 AM",
-    category:   "Tech Talk" }
+    category:   "Others" }
 end
 
 def create_events
@@ -37,17 +37,17 @@ end
 
 def fill_event
   visit '/events/new'
-  fill_in "Name",       with: @event[:name]
-  fill_in "Details",    with: @event[:details]
-  fill_in "Where",      with: @event[:where]
-  fill_in "Source",     with: @event[:source]
-  fill_in "Date",       with: @event[:whendate]
-  fill_in "Time",       with: @event[:whentime]
-  fill_in "Category",   with: @event[:category]
+  fill_in "Title",            with: @event[:name]
+  fill_in "Details",          with: @event[:details]
+  fill_in "Location",         with: @event[:where]
+  fill_in "Source",           with: @event[:source]
+  fill_in "Date",             with: @event[:whendate]
+  fill_in "Time",             with: @event[:whentime]
+  select @event[:category],   from: "Category"
 end
 
 def click_create_button
-  click_button "Create Event"
+  click_button "Add"
 end
 
 def click_add_link
@@ -98,6 +98,10 @@ end
 
 Then /^I should see a successful event creation message$/ do
   page.should have_content "Event added."
+end
+
+Then /^I should see a review problems message$/ do
+  page.should have_content "Please review the problems below:"
 end
 
 Then /^I should see an invalid event creation message$/ do
