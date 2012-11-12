@@ -17,8 +17,8 @@ Devise::Mailer Setup on Heroku
 
 Database Seeds
 ==============
-- Run `export SEED_ADMIN_PASSWORD=yourpassword` for seeding administrator password.
-- Run `export SEED_USER_PASSWORD=yourpassword` for seeding example users password.
+- Run `heroku config:add SEED_ADMIN_PASSWORD=yourpassword` for seeding administrator password.
+- Run `heroku config:add SEED_USER_PASSWORD=yourpassword` for seeding example users password.
 - This is such that the password isn't revealed in `db/seeds.rb` and it is local to your production env.
 
 Third-party Usage
