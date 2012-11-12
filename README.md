@@ -3,9 +3,9 @@ PurdueFoodFinder
 
 Author: [James Ma][]
 
-A Rails web app hosted on [Heroku][] that lets you find local events with free food or giveaways around Purdue's campus. Live off free food as much as you can. 
+A Rails web app hosted on Heroku that lets you find local events with free food or giveaways around Purdue's campus. Live off free food as much as you can. 
 
-This is a work in progress. Check out the website [here][]!
+This is a work in progress. Check out the website [here][]! Currently it is populated with fake data.
 
 Devise::Mailer Setup on Heroku
 ==============================
@@ -34,7 +34,6 @@ Third-party Usage
 - [Rspec][], [Cucumber][]... the list goes on!
 
 [James Ma]: http://jamesma.info
-[Heroku]: http://www.heroku.com/
 [here]: http://purduefoodfinder.herokuapp.com/
 [Devise]: https://github.com/plataformatec/devise
 [CanCan]: https://github.com/ryanb/cancan
