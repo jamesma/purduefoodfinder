@@ -173,7 +173,16 @@ $(document).ready(function() {
     }
   });
 
-  $('#user_list').dataTable({
+  $('#user_list').dataTable( {
+    "bPaginate": false,
+    "bLengthChange": false,
+    "bFilter": true,
+    "bSort": false,
+    "bInfo": false,
+    "bAutoWidth": false
+  } );
+
+  $('#admin_list').dataTable({
     "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
     "sPaginationType": "bootstrap",
     "oLanguage": {
