@@ -15,6 +15,12 @@ Devise::Mailer Setup on Heroku
 - Run `heroku config:add GMAIL_SMTP_PASSWORD=yourpassword`
 - The advantage is that your email username and password are not exposed in the `config/environments/` directory. Win-win!
 
+Database Seeds
+==============
+- Run `export SEED_ADMIN_PASSWORD=yourpassword` for seeding administrator password.
+- Run `export SEED_USER_PASSWORD=yourpassword` for seeding example users password.
+- This is such that the password isn't revealed in `db/seeds.rb` and it is local to your production env.
+
 Third-party Usage
 =================
 

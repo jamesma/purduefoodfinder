@@ -21,8 +21,8 @@ def create_users
   admin = User.new(
     name: 'Administrator',
     email: 'admin@purdue.edu',
-    password: 'foobar',
-    password_confirmation: 'foobar')
+    password: ENV['SEED_ADMIN_PASSWORD'],
+    password_confirmation: ENV['SEED_ADMIN_PASSWORD'])
   admin.skip_confirmation!
   admin.add_role :admin
   admin.save!
@@ -31,7 +31,7 @@ def create_users
   49.times do |n|
     name = Faker::Name.name
     email = "user#{n+1}@purdue.edu"
-    password = 'foobar'
+    password = ENV['SEED_USER_PASSWORD']
     user = User.new(
       name: name,
       email: email,
