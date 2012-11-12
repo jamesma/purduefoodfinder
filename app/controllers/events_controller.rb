@@ -56,7 +56,7 @@ class EventsController < ApplicationController
   # Delete specific event
   def destroy
     @event.destroy
-    redirect_to root_url, notice: "Event deleted."
+    redirect_to user_path(current_user), notice: "Event deleted."
   end
 
   private
